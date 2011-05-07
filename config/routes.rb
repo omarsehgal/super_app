@@ -1,6 +1,5 @@
 SuperApp::Application.routes.draw do
-
-  get "users/new"
+  resources :users
 
   match '/' => 'pages#home'
   match '/help' => 'pages#help'
