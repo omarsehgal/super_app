@@ -1,10 +1,13 @@
 SuperApp::Application.routes.draw do
+
   resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
 
   match '/' => 'pages#home'
   match '/help' => 'pages#help'
-  match '/signin' => 'pages#signin'
+  match '/signin' => 'sessions#new'
   match '/signup' => 'users#new'
+  match '/signout' => 'sessions#destroy'
   
   match '/about' => 'pages#about'
   match '/contact' => 'pages#contact'
